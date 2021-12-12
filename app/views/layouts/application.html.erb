@@ -7,20 +7,68 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?61b5ed1996cc475faca968b4ac1e02e5" charset="utf-8"></script>
   </head>
   <body class="d-flex flex-column vh-100">
-    <main class="d-flex flex-column vh-100">
+
       <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
           <div class="container-fluid">
             <%= link_to image_tag("logo", size: "150x100"), root_path, class: "mt-2" %>
              <div>
-               <ul class="navbar-nav ml-auto"></ul>
+               <ul class="navbar-nav ml-auto">
+                <%# userがログインした時のヘッダー %>
+                  <% if user_signed_in? %>
+                    <li class="ml-3">
+                      <%= link_to image_tag("theme", size: "130x100") %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("ranking", size: "130x100") %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("kaitouwosuru", size: "130x100") %>
+                    </li>
+                    <li>
+                      <%= link_to image_tag("signout", size: "130x100"), destroy_user_session_path, method: :delete %>
+                    </li>
+                <%# adminとしてログインした時のヘッダー %>
+                  <% elsif admin_signed_in? %>
+                    <li class="ml-3">
+                      <%= link_to image_tag("theme", size: "130x100") %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("ranking", size: "130x100") %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("kaitouwomiru", size: "130x100") %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("signout", size: "130x100"), destroy_admin_session_path, method: :delete %>
+                    </li>
+                <%# どちらの役割でもログインしていない時のヘッダー %>
+                  <% else %>
+                    <li class="ml-3">
+                      <%= link_to image_tag("about", size: "130x100"), about_path %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("theme", size: "130x100") %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("kaitouwomiru", size: "130x100") %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("signin", size: "130x100"), new_user_session_path %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("signup", size: "130x100"), new_user_registration_path %>
+                    </li>
+                  <% end %>
+               </ul>
              </div>
           </div>
         </nav>
       </header>
-    </main>
+
   </body>
 
   <body>

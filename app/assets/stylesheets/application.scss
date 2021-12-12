@@ -16,3 +16,8 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+/* bodyタグにフォント変更を適用*/
+body{
+  font-family: "角新行書 M";
+}
