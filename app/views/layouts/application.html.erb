@@ -12,13 +12,16 @@
   <body class="d-flex flex-column vh-100">
 
       <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm border-bottom">
           <div class="container-fluid">
             <%= link_to image_tag("logo", size: "150x100"), root_path, class: "mt-2" %>
              <div>
                <ul class="navbar-nav ml-auto">
                 <%# userがログインした時のヘッダー %>
                   <% if user_signed_in? %>
+                    <li>
+                      ようこそ<%= current_user.nickname %>！！
+                    </li>
                     <li class="ml-3">
                       <%= link_to image_tag("theme", size: "130x100") %>
                     </li>
@@ -34,7 +37,7 @@
                 <%# adminとしてログインした時のヘッダー %>
                   <% elsif admin_signed_in? %>
                     <li class="ml-3">
-                      <%= link_to image_tag("theme", size: "130x100") %>
+                      <%= link_to image_tag("theme", size: "130x100"), admin_themes_path %>
                     </li>
                     <li class="ml-3">
                       <%= link_to image_tag("ranking", size: "130x100") %>

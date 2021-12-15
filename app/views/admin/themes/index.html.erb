@@ -1,0 +1,21 @@
+<div class="container">
+  <h3>お題一覧</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>投稿時間</th>
+          <th>お題</th>
+          <th>回答件数</th>
+        </tr>
+      </thead>
+      <% @themes.each do |theme| %>
+      <tbody>
+        <tr>
+          <td><%= theme.created_at %></td>
+          <td><%= theme.theme %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+    <div><%= link_to "新しいお題を投稿する", new_admin_theme_path %></div>
+</div>
