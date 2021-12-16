@@ -3,7 +3,7 @@
     <%= @theme.theme %>
   </div>
 
-  <%= form_with url:user_answers_path, model: @answer, local:true do |f| %>
+  <%= form_with url:user_answer_path, model: @answer, local:true do |f| %>
   <div><%= f.text_area :answer %></div>
   <div><%= f.submit '回答する' %></div>
   <% end %>

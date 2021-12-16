@@ -8,14 +8,19 @@ Rails.application.routes.draw do
     sessions: 'user/sessions'
   }
 
-  resources :answers
-  
+
+
   namespace :admin do
     resources :themes, only: [:show, :index, :new, :create, :edit, :update, :destroy]
   end
 
   scope module: :user do
     resources :users, only: [:show, :edit, :update]
+  end
+
+  namespace :user do
+    resources :themes, only:[:index, :show]
+    resources :answers, only:[:show, :index, :create, :edit, :update, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'homes#top'

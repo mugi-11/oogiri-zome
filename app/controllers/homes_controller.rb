@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   def top
-    #@themes = theme.all
+    @themes = Theme.all
   end
 
   def about

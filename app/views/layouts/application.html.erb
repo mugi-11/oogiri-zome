@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?61b5ed1996cc475faca968b4ac1e02e5" charset="utf-8"></script>
   </head>
   <body class="d-flex flex-column vh-100">
@@ -23,7 +23,7 @@
                       ようこそ<%= current_user.nickname %>！！
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("theme", size: "130x100") %>
+                      <%= link_to image_tag("theme", size: "130x100"), user_themes_path %>
                     </li>
                     <li class="ml-3">
                       <%= link_to image_tag("ranking", size: "130x100") %>

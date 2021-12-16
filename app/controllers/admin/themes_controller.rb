@@ -14,7 +14,7 @@ class Admin::ThemesController < ApplicationController
 
   def create
     @theme = Theme.new(theme_params)
-    if @theme.save!
+    if @theme.save
       redirect_to admin_themes_path
     else
       render 'new'

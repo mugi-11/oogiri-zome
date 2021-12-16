@@ -3,11 +3,11 @@
 
 
   <h3>最新のお題</h3>
-  <div>
-    <%# image_tag("wakugumi", size: "600x400") %>
-    <%# @themes.each do |theme| %>
-      <%# theme.theme %>
-    <%# end %>
-  </div>
+    <div class="wakugumi">
+      <%# image_tag "wakugumi.jpg" %>
+      <% @themes.last(1).reverse.each do |theme| %>
+        <p class="last-theme"><%= theme.theme %></p>
+      <% end %>
+    </div>
 
 </div>
