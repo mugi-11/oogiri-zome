@@ -1,10 +1,10 @@
 <div class="container">
   <div class="theme">
-    <%= @theme.theme %>
+    お題：<%= @theme.theme %>
   </div>
 
-  <%= form_with url:user_answer_path, model: @answer, local:true do |f| %>
-  <div><%= f.text_area :answer %></div>
-  <div><%= f.submit '回答する' %></div>
+  <%= form_with url:user_theme_answers_path(@theme.id), model: @answer, local:true do |f| %>
+  <div><%= f.text_area :answer, size: "30x5" %></div>
+  <div><%= f.submit '回答する'  %></div>
   <% end %>
 </div>

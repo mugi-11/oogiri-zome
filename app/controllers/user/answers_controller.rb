@@ -8,7 +8,7 @@ class User::AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
     @answer.user_id = current_user.id
-    theme_id = params[:answer][:theme_id]
+    @answer.theme_id = params[:theme_id]
     if @answer.save
       redirect_to root_path
     else
@@ -16,8 +16,13 @@ class User::AnswersController < ApplicationController
     end
   end
 
+  def index
+    @theme = Theme.find(params[:theme_id])
+    @answer = Answer.all
+  end
+
   private
   def answer_params
-    params.require(:answer).permit(:answer, :user_id, :theme_id)
+    params.require(:answer).permit(:answer, :user_id)
   end
 end

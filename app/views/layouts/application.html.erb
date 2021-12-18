@@ -12,7 +12,7 @@
   <body class="d-flex flex-column vh-100">
 
       <header>
-        <nav class="navbar navbar-expand-lg navbar-light shadow-sm border-bottom bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light shadow border-bottom bg-white">
           <div class="container-fluid">
             <%= link_to image_tag("logo", size: "150x100"), root_path, class: "mt-2" %>
              <div>
@@ -29,7 +29,7 @@
                       <%= link_to image_tag("banduke", size: "130x100") %>
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("kaitouwosuru", size: "130x100") %>
+                      <%= link_to image_tag("sitaku", size: "130x100"), user_path(current_user) %>
                     </li>
                     <li>
                       <%= link_to image_tag("signout", size: "130x100"), destroy_user_session_path, method: :delete %>
@@ -40,10 +40,10 @@
                       <%= link_to image_tag("theme", size: "130x100"), admin_themes_path %>
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("rabanduke", size: "130x100") %>
+                      <%= link_to image_tag("banduke", size: "130x100") %>
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("kaitouwomiru", size: "130x100") %>
+                      <%= link_to image_tag("monkasei", size: "130x100") %>
                     </li>
                     <li class="ml-3">
                       <%= link_to image_tag("signout", size: "130x100"), destroy_admin_session_path, method: :delete %>
@@ -51,7 +51,7 @@
                 <%# どちらの役割でもログインしていない時のヘッダー %>
                   <% else %>
                     <li class="ml-3">
-                      <%= link_to image_tag("about", size: "130x100"), about_path %>
+                      <%= link_to image_tag("kokoroe", size: "130x100"), about_path %>
                     </li>
                     <li class="ml-3">
                       <%= link_to image_tag("theme", size: "130x100") %>
@@ -75,6 +75,6 @@
   </body>
 
   <body class="main">
-    <%= yield %>
+    <div class="cont"><%= yield %></div>
   </body>
 </html>

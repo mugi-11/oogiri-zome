@@ -4,7 +4,6 @@
 
   <h3>最新のお題</h3>
     <div class="wakugumi">
-      <%# image_tag "wakugumi.jpg" %>
       <% @themes.last(1).reverse.each do |theme| %>
         <p class="last-theme"><%= theme.theme %></p>
       <% end %>

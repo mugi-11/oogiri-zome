@@ -1,0 +1,16 @@
+<div class="container">
+  <h6>みんなの回答一覧</h6>
+
+  <h3>お題：<%= @theme.theme %></h3>
+    <table class="table">
+      <tbody>
+        <tr>
+          <% @theme.answers.each do |answer| %>
+          <td><%= answer.answer %></td>
+          <td><%= answer.user.nickname %></td>
+          <td></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+</div>

@@ -26,11 +26,20 @@ body {
 
 
 .wakugumi {
-  width: 600px;
-  height: 400px;
+  background-image: image-url("wakugumi2.jpg");
+  background-size: 700px 300px;
+  width: 700px;
+  height: 300px;
 }
 
 .last-theme {
-  font-size: 36px;
+  font-size: 30px;
+  position: absolute;
+  top: 46%;
+  left: 40%;
+  transform: translate(-54%,-60%);
 }
 
+.cont {
+  margin-top: 50px;
+}
