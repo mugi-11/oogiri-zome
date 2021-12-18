@@ -1,6 +1,8 @@
 class Admin::ThemesController < ApplicationController
 
   def show
+    @theme = Theme.find(params[:id])
+    @answer = Answer.all
   end
 
   def index

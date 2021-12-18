@@ -13,6 +13,7 @@
         <tr>
           <td><%= theme.created_at.strftime("%Y-%m-%d %H:%M") %></td>
           <td><%= theme.theme %></td>
+          <td><%= link_to "#{theme.answers.count}", admin_theme_path(theme.id) %>件</td>
         </tr>
       </tbody>
       <% end %>

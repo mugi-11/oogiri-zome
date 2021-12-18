@@ -8,7 +8,20 @@
           <% @theme.answers.each do |answer| %>
           <td><%= answer.answer %></td>
           <td><%= answer.user.nickname %></td>
-          <td></td>
+          <% if answer.liked_by?(current_user) %>
+          <td>
+            <%= link_to user_theme_answer_likes_path(@theme.id, answer.id), method: :delete do %>
+              ♥<%= answer.likes.count %> いいね
+            <% end %>
+          </td>
+          <% else %>
+          <td>
+            <%= link_to user_theme_answer_likes_path(@theme.id, answer.id), method: :post do %>
+              ♡<%= answer.likes.count %> いいね
+            <% end %>
+
+          </td>
+          <% end %>
         </tr>
       </tbody>
       <% end %>

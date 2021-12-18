@@ -20,10 +20,13 @@ Rails.application.routes.draw do
 
   namespace :user do
     resources :themes, only:[:index, :show] do
-      resources :answers, only:[:show, :index, :create, :edit, :update, :destroy]
+      resources :answers, only:[:show, :index, :create, :edit, :update, :destroy]do
+        resources :likes, only: [:create, :destroy]
+      end
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'homes#top'
   get '/about' => 'homes#about'
+
 end

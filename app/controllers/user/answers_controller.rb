@@ -18,7 +18,8 @@ class User::AnswersController < ApplicationController
 
   def index
     @theme = Theme.find(params[:theme_id])
-    @answer = Answer.all
+    @answers = Answer.all
+    
   end
 
   private

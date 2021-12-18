@@ -1,0 +1,15 @@
+<div class="container">
+  <h3>お題：<%= @theme.theme %></h3>
+    <table class="table">
+      <tbody>
+        <tr>
+          <% @theme.answers.each do |answer| %>
+          <td><%= answer.answer %></td>
+          <td><%= answer.user.nickname %></td>
+          <td></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+    <%= link_to "一覧に戻る", admin_themes_path %>
+</div>
