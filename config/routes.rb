@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   namespace :user do
     resources :themes, only:[:index, :show] do
       resources :answers, only:[:show, :index, :create, :edit, :update, :destroy]do
-        resources :likes, only: [:create, :destroy]
+        resource :likes, only:[:create, :destroy]
       end
     end
   end

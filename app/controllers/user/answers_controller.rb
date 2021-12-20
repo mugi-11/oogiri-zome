@@ -10,7 +10,7 @@ class User::AnswersController < ApplicationController
     @answer.user_id = current_user.id
     @answer.theme_id = params[:theme_id]
     if @answer.save
-      redirect_to root_path
+      redirect_to user_theme_answers_path
     else
       render 'new'
     end
@@ -19,7 +19,7 @@ class User::AnswersController < ApplicationController
   def index
     @theme = Theme.find(params[:theme_id])
     @answers = Answer.all
-    
+
   end
 
   private
