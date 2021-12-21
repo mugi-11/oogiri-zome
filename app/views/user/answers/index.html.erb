@@ -13,13 +13,13 @@
           <% elsif answer.liked_by?(current_user) %>
             <td>
             <%= link_to user_theme_answer_likes_path(@theme, answer), method: :delete do %>
-              ♥
+              ★
             <% end %>
             </td>
           <% else %>
             <td>
             <%= link_to user_theme_answer_likes_path(@theme, answer), method: :post do %>
-              ♡
+              ☆
             <% end %>
             </td>
           <% end %>
@@ -29,3 +29,4 @@
       <% end %>
     </table>
 </div>
+

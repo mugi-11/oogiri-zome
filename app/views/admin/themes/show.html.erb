@@ -6,7 +6,7 @@
           <% @theme.answers.each do |answer| %>
           <td><%= answer.answer %></td>
           <td><%= answer.user.nickname %></td>
-          <td></td>
+          <td><%= answer.likes.count %>Point</td>
         </tr>
       </tbody>
       <% end %>

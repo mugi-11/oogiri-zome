@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :answers, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :liked_answers, through: :likes, source: :answer
 
-  
 end

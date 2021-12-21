@@ -27,19 +27,21 @@ body {
 
 .wakugumi {
   background-image: image-url("wakugumi2.jpg");
-  background-size: 700px 300px;
-  width: 700px;
+  background-size: 900px 300px;
+  width: 900px;
   height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .last-theme {
   font-size: 30px;
-  position: absolute;
-  top: 46%;
-  left: 40%;
-  transform: translate(-54%,-60%);
+  
 }
 
 .cont {
   margin-top: 50px;
 }
+

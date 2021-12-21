@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :themes, only: [:show, :index, :new, :create, :edit, :update, :destroy]
+    resources :users, only: [:index, :edit, :update, :show]
   end
 
   scope module: :user do
@@ -28,5 +29,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'homes#top'
   get '/about' => 'homes#about'
+  get '/admin' => 'admin/homes#top'
 
 end

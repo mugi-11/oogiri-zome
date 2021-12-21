@@ -1,0 +1,21 @@
+<div class="container">
+  <h3>門下生一覧</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>名前</th>
+          <th>回答件数</th>
+          <th>Point数</th>
+        </tr>
+      </thead>
+      <% @users.each do |user| %>
+        <tbody>
+          <tr>
+            <td><%= user.nickname %></td>
+            <td><%= user.answers.count %></td>
+            <td><%= user.liked_answers.count %>Point</td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+</div>
