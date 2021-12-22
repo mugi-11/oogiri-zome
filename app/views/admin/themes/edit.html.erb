@@ -1,0 +1,15 @@
+<div class="container">
+  <table class="table">
+    <%= form_with url:admin_theme_path, model: @theme, local:true do |f| %>
+    <tbody>
+      <tr>
+        <td>お題</td>
+
+        <td><%= f.text_area :theme %></td>
+        <td><%= f.submit "変更を保存", class: "btn btn-outline-success" %></td>
+        <td><%= link_to "お題を削除する", admin_theme_path(@theme), method: :delete, class: "btn btn-outline-danger" %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+</div>

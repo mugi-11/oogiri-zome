@@ -1,4 +1,7 @@
 class Admin::ThemesController < ApplicationController
+  
+    
+  before_action :authenticate_admin!
 
   def show
     @theme = Theme.find(params[:id])
@@ -24,6 +27,16 @@ class Admin::ThemesController < ApplicationController
   end
 
   def edit
+    @theme = Theme.find(params[:id])
+  end
+
+  def update
+    @theme = Theme.find(params[:id])
+    if @theme.update(theme_params)
+      redirect_to admin_theme_path(@theme)
+    else
+      render "edit"
+    end
   end
 
   def destroy

@@ -1,6 +1,7 @@
-<div class="container">
-  <h3>投稿されたお題一覧</h3>
-  <table class="table">
+<% if user_signed_in? %>
+  <div class="container">
+    <h3>投稿されたお題一覧</h3>
+    <table class="table">
       <thead>
         <tr>
           <th>投稿時間</th>
@@ -20,4 +21,28 @@
       </tbody>
       <% end %>
     </table>
-</div>
+  </div>
+<% else %>
+  <div class="container">
+    <h3>投稿されたお題一覧</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>投稿時間</th>
+          <th>お題</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <% @themes.reverse.each do |theme| %>
+      <tbody>
+        <tr>
+          <td><%= theme.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+          <td><%= theme.theme %></td>
+          <td><%= link_to "みんなの回答を見る", user_theme_answers_path(theme.id) %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+  </div>
+<% end %>

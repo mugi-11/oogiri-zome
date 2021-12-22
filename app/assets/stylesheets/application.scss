@@ -23,6 +23,16 @@ body {
    background-color:#ffffe0;
 }
 
+.sketch {
+  background-image: image-url("sketch3.jpg");
+  background-size: 800px 350px;
+  width: 800px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 
 .wakugumi {
@@ -38,7 +48,7 @@ body {
 
 .last-theme {
   font-size: 30px;
-  
+
 }
 
 .cont {

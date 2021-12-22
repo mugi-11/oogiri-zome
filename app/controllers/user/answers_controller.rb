@@ -1,5 +1,6 @@
 class User::AnswersController < ApplicationController
 
+
   def new
     @theme = Theme.find(params[:id])
     @answer = Answer.new
@@ -19,7 +20,12 @@ class User::AnswersController < ApplicationController
   def index
     @theme = Theme.find(params[:theme_id])
     @answers = Answer.all
+  end
 
+  def destroy
+    answer = Answer.find(params[:id])
+    answer.destroy
+    redirect_to user_path
   end
 
   private

@@ -4,18 +4,23 @@
 
     </div>
     <div>回答一覧</div>
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>お題</th>
           <th>回答</th>
+          <th></th>
         </tr>
       </thead>
+      <% @user.answers.each do |answer| %>
       <tbody>
         <tr>
-          <td></td>
-          <td></td>
+          <td><%= answer.theme.theme %></td>
+          <td><%= answer.answer %></td>
+          <td><%= link_to "削除する", user_theme_answer_path(answer), method: :delete %></td>
         </tr>
       </tbody>
+      <% end %>
     </table>
+    <div><%= link_to "編集する", edit_user_path(@user) %></div>
 </div>
