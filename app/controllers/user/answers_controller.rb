@@ -17,14 +17,19 @@ class User::AnswersController < ApplicationController
     end
   end
 
+  def edit
+     @theme = Theme.find(params[:theme_id])
+    @answer = Answer.find(params[:id])
+  end
+
   def index
     @theme = Theme.find(params[:theme_id])
     @answers = Answer.all
   end
 
   def destroy
-    answer = Answer.find(params[:id])
-    answer.destroy
+    @answer = Answer.find(params[:id])
+    @answer.destroy
     redirect_to user_path
   end
 

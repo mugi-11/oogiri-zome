@@ -1,0 +1,11 @@
+<div class="container">
+  <table>
+    <tbody>
+      <tr>
+        <td><%= answer.theme.theme %></td>
+        <td><%= answer.answer %></td>
+        <td><%= link_to "削除する", user_theme_answer_path(answer), method: :delete %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
