@@ -1,0 +1,14 @@
+<div class="container">
+  <table class="table">
+    <% @ranks.each do |answer| %>
+      <tbody>
+        <tr>
+          <td><%= answer.user.nickname %></td>
+          <td><%= answer.like.count %>Point</td>
+          <td><%= answer.answer %></td>
+          <td><%= answer.theme.theme %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+</div>

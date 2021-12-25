@@ -68,6 +68,9 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'devise'
 gem "font-awesome-rails"
 gem 'dotenv-rails'
+gem 'rubocop', require:false
+gem 'rubocop-rails', require:false
+gem 'kaminari'
 group :production do
   gem 'mysql2'
 end

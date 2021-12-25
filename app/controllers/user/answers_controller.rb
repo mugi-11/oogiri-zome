@@ -1,4 +1,5 @@
 class User::AnswersController < ApplicationController
+  before_action :authenticate_user!, except:[:index]
 
 
   def new
@@ -15,6 +16,10 @@ class User::AnswersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def show
+    @answer = Answer.find(params[:id])
   end
 
   def edit

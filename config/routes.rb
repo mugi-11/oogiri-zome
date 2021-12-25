@@ -16,12 +16,12 @@ Rails.application.routes.draw do
   end
 
   scope module: :user do
-    resources :users, only: [:show, :edit, :update]
+    resources :users, only: [:show, :edit, :index, :update]
   end
 
   namespace :user do
     resources :themes, only:[:index, :show] do
-      resources :answers, only:[:show, :index, :create, :edit, :update, :destroy]do
+      resources :answers, only:[:index, :create, :edit, :update, :destroy]do
         resource :likes, only:[:create, :destroy]
       end
     end
@@ -30,5 +30,4 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get '/about' => 'homes#about'
   get '/admin' => 'admin/homes#top'
-
 end

@@ -1,4 +1,5 @@
 class User::UsersController < ApplicationController
+  before_action :authenticate_user!
 
 
   def show
@@ -7,6 +8,10 @@ class User::UsersController < ApplicationController
 
   def edit
     @user = current_user
+  end
+
+  def index
+    @all_ranks = Answer.find(Like.group(:answer_id).order('count(answer_id) desc').pluck(:answer_id))
   end
 
   def update

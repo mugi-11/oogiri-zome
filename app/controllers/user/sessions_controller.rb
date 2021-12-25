@@ -24,6 +24,7 @@ class User::SessionsController < Devise::SessionsController
       root_path
     end
 
+    
 
 
   # If you have extra params to permit, append them to the sanitizer.

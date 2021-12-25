@@ -5,7 +5,6 @@
         <tr>
           <th>名前</th>
           <th>回答件数</th>
-          <th>Point数</th>
         </tr>
       </thead>
       <% @users.each do |user| %>
@@ -13,9 +12,13 @@
           <tr>
             <td><%= link_to user.nickname, admin_user_path(user) %></td>
             <td><%= user.answers.count %></td>
-            <td><%= user.liked_answers.count %>Point</td>
           </tr>
         </tbody>
       <% end %>
     </table>
+    <div class="row">
+    <div class="mx-auto">
+      <p><%= paginate @users %></p>
+      </div>
+    </div>
 </div>
