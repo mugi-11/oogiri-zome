@@ -2,9 +2,14 @@
   <div class="theme">
     <%= @theme.theme %>
   </div>
-
-  <%= form_with url:user_answers_path, model: @answer, local:true do |f| %>
-  <div><%= f.text_area :answer %></div>
-  <div><%= f.submit '回答する' %></div>
-  <% end %>
+  <table class="table">
+    <%= form_with url:user_theme_answers_path(@theme.id), model: @answer, local:true do |f| %>
+    <tbody>
+      <tr>
+        <td><%= f.text_area :answer %></td>
+        <td><%= f.submit '回答する' %></td>
+      </tr>
+    </tbody>
+    <% end %>
+ </table>
 </div>

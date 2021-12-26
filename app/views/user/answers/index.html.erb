@@ -4,7 +4,7 @@
       <h4>みんなの回答一覧</h4>
     </div>
     <div class="row">
-    <% @theme.answers.each do |answer| %>
+    <% @answers.each do |answer| %>
       <section>
         <h3>お題：<%= @theme.theme %></h3>
           <div class="sketch">
@@ -26,6 +26,11 @@
       </section>
     <% end %>
     </div>
+    <div class="row">
+    <div class="mx-auto">
+      <p><%= paginate @answers %></p>
+      </div>
+    </div>
   </div>
 
 <% else %>
@@ -34,7 +39,7 @@
       <h4>みんなの回答一覧</h4>
     </div>
     <div class="row">
-    <% @theme.answers.each do |answer| %>
+    <% @theme.answers.reverse.each do |answer| %>
       <section>
         <h3>お題：<%= @theme.theme %></h3>
           <div class="sketch">
@@ -43,6 +48,11 @@
           <div class="bottom"></div>
       </section>
     <% end %>
+    </div>
+    <div class="row">
+    <div class="mx-auto">
+      <p><%= paginate @answers %></p>
+      </div>
     </div>
   </div>
 

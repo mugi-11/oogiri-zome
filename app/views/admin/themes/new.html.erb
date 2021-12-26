@@ -1,7 +1,15 @@
 <div class="container">
   <h3>お題新規投稿ページ</h3>
-  <%= form_with url:admin_themes_path, model: @theme, local:true do |f| %>
-  <div><%= f.text_field :theme %></div>
-  <div><%= f.submit 'お題を投稿する', class: "btn btn-success" %></div>
-  <% end %>
+    <div class="cont">
+      <table class="table">
+        <%= form_with url:admin_themes_path, model: @theme, local:true do |f| %>
+        <tbody>
+          <tr>
+            <td><%= f.text_area :theme %></td>
+            <td><%= f.submit 'お題を投稿する', class: "btn btn-outline-success" %></td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+  </div>
 </div>

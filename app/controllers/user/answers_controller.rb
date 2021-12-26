@@ -29,7 +29,8 @@ class User::AnswersController < ApplicationController
 
   def index
     @theme = Theme.find(params[:theme_id])
-    @answers = Answer.all
+
+    @answers = @theme.answers.order("created_at DESC").page(params[:page]).per(5)
   end
 
   def destroy
