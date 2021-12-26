@@ -14,7 +14,7 @@
       <header>
         <nav class="navbar navbar-expand-lg navbar-light shadow border-bottom bg-white">
           <div class="container-fluid">
-            <%= link_to image_tag("logo", size: "150x100"), root_path, class: "mt-2" %>
+            <%= link_to image_tag("logo.jpg", size: "150x100"), root_path, class: "mt-2" %>
              <div>
                <ul class="navbar-nav ml-auto">
                 <%# userがログインした時のヘッダー %>
@@ -23,16 +23,16 @@
                       ようこそ<%= current_user.nickname %>！！
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("theme", size: "130x100"), user_themes_path %>
+                      <%= link_to image_tag("theme.jpg", size: "130x100"), user_themes_path %>
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("banduke", size: "130x100"), users_path %>
+                      <%= link_to image_tag("banduke.jpg", size: "130x100"), users_path %>
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("sitaku", size: "130x100"), user_path(current_user) %>
+                      <%= link_to image_tag("sitaku.jpg", size: "130x100"), user_path(current_user) %>
                     </li>
                     <li>
-                      <%= link_to image_tag("signout", size: "130x100"), destroy_user_session_path, method: :delete %>
+                      <%= link_to image_tag("signout.jpg", size: "130x100"), destroy_user_session_path, method: :delete %>
                     </li>
                 <%# adminとしてログインした時のヘッダー %>
                   <% elsif admin_signed_in? %>
@@ -40,27 +40,27 @@
                       管理者ページ
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("theme", size: "130x100"), admin_themes_path %>
+                      <%= link_to image_tag("theme.jpg", size: "130x100"), admin_themes_path %>
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("monkasei", size: "130x100"), admin_users_path %>
+                      <%= link_to image_tag("monkasei.jpg", size: "130x100"), admin_users_path %>
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("signout", size: "130x100"), destroy_admin_session_path, method: :delete %>
+                      <%= link_to image_tag("signout.jpg", size: "130x100"), destroy_admin_session_path, method: :delete %>
                     </li>
                 <%# どちらの役割でもログインしていない時のヘッダー %>
                   <% else %>
                     <li class="ml-3">
-                      <%= link_to image_tag("kokoroe", size: "130x100"), about_path %>
+                      <%= link_to image_tag("kokoroe.jpg", size: "130x100"), about_path %>
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("theme", size: "130x100"), user_themes_path %>
+                      <%= link_to image_tag("theme.jpg", size: "130x100"), user_themes_path %>
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("keiko", size: "130x100"), new_user_session_path %>
+                      <%= link_to image_tag("keiko.jpg", size: "130x100"), new_user_session_path %>
                     </li>
                     <li class="ml-3">
-                      <%= link_to image_tag("nyumon", size: "130x100"), new_user_registration_path %>
+                      <%= link_to image_tag("nyumon.jpg", size: "130x100"), new_user_registration_path %>
                     </li>
                   <% end %>
                </ul>
