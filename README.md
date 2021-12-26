@@ -27,7 +27,8 @@
 
 ## 設計書
 
-<...>
+テーブル定義書https://docs.google.com/spreadsheets/d/1lYW94U7_LwKNhHqyxBz6D316sVkR0aqgzxDbNdL2wt4/edit?usp=sharing
+ER図https://drive.google.com/file/d/1O8hFT2R3DHeIzHu7w8slKLCtHBJZzLaM/view?usp=sharing
 
 ## チャレンジ要素一覧
 
