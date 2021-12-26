@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="theme">
+    <%= @theme.theme %>
+  </div>
+  <table class="table">
+    <%= form_with url:user_theme_answers_path(@theme.id), model: @answer, local:true do |f| %>
+    <tbody>
+      <tr>
+        <td><%= f.text_area :answer %></td>
+        <td><%= f.submit '回答する' %></td>
+      </tr>
+    </tbody>
+    <% end %>
+ </table>
+</div>

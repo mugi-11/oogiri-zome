@@ -1,0 +1,23 @@
+<% if user_signed_in? %>
+<div class="text-box container">
+  <h3>初心者向け大喜利道場<strong>大喜利初めへようこそ</strong></h3>
+  <h3>最新のお題</h3>
+    <div class="wakugumi">
+      <% @themes.last(1).reverse.each do |theme| %>
+        <div class="last-theme"><%= theme.theme %></div>
+    </div>
+    <div><%= link_to "みんなの回答を見る", user_theme_answers_path(theme.id) %>|<%= link_to "このお題に回答する", user_theme_path(theme.id) %></div>
+    <% end %>
+</div>
+<% else %>
+  <div class="text-box container">
+  <h3>初心者向け大喜利道場<strong>大喜利初めへようこそ</strong></h3>
+  <h3>最新のお題</h3>
+    <div class="wakugumi">
+      <% @themes.last(1).reverse.each do |theme| %>
+        <div class="last-theme"><%= theme.theme %></div>
+    </div>
+    <div><%= link_to "みんなの回答を見る", user_theme_answers_path(theme.id) %></div>
+    <% end %>
+  </div>
+<% end %>

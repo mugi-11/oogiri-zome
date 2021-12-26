@@ -1,0 +1,31 @@
+<div class="container">
+  <table class="table">
+    <% last_like = 0 %>
+    <% j = 1 %>
+    <% @all_ranks.each.with_index(1) do |answer, i| %>
+      <tbody>
+        <tr>
+         <% if i == 1 %>
+          <% last_like = answer.likes.count %>
+        <% end %>
+        <% if answer.likes.count != last_like %>
+          <% j = i %>
+        <% last_like = answer.likes.count %>
+          <td>第<%= j %>位</td>
+          <td><%= answer.user.nickname %></td>
+          <td><%= answer.like.count %>Point</td>
+          <td><%= answer.answer %></td>
+          <td><%= answer.theme.theme %></td>
+        <% else %>
+           <% last_like = answer.likes.count %>
+           <td>第<%= j %>位</td>
+          <td><%= answer.user.nickname %></td>
+          <td><%= answer.like.count %>Point</td>
+          <td><%= answer.answer %></td>
+          <td><%= answer.theme.theme %></td>
+        <% end %>
+        </tr>
+      </tbody>
+      <% end %>
+  </table>
+</div>

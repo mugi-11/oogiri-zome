@@ -1,0 +1,21 @@
+<div class="container">
+  <table class="table">
+    <%= form_with url:admin_user_path, model:@user, local:true do |f| %>
+    <tbody>
+      <tr>
+        <td>ニックネーム</td>
+        <td><%= f.text_field :nickname, autofocus: true, id:"inputName", placeholder:"ニックネーム" %></td>
+      </tr>
+      <tr>
+        <td>メールアドレス</td>
+        <td><%= f.text_field :email, id:"inputName", placeholder:"メールアドレス" %></td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.submit "編集内容を保存", class: "btn btn-success" %>
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+</div>

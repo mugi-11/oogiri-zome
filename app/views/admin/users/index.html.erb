@@ -1,0 +1,24 @@
+<div class="container">
+  <h3>門下生一覧</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>名前</th>
+          <th>回答件数</th>
+        </tr>
+      </thead>
+      <% @users.each do |user| %>
+        <tbody>
+          <tr>
+            <td><%= link_to user.nickname, admin_user_path(user) %></td>
+            <td><%= user.answers.count %></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+    <div class="row">
+    <div class="mx-auto">
+      <p><%= paginate @users %></p>
+      </div>
+    </div>
+</div>

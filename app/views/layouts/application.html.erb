@@ -4,12 +4,74 @@
     <title>Oogirizome</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?61b5ed1996cc475faca968b4ac1e02e5" charset="utf-8"></script>
   </head>
+  <body class="d-flex flex-column vh-100">
 
-  <body>
-    <%= yield %>
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-light shadow border-bottom bg-white">
+          <div class="container-fluid">
+            <%= link_to image_tag("logo", size: "150x100"), root_path, class: "mt-2" %>
+             <div>
+               <ul class="navbar-nav ml-auto">
+                <%# userがログインした時のヘッダー %>
+                  <% if user_signed_in? %>
+                    <li>
+                      ようこそ<%= current_user.nickname %>！！
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("theme", size: "130x100"), user_themes_path %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("banduke", size: "130x100"), users_path %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("sitaku", size: "130x100"), user_path(current_user) %>
+                    </li>
+                    <li>
+                      <%= link_to image_tag("signout", size: "130x100"), destroy_user_session_path, method: :delete %>
+                    </li>
+                <%# adminとしてログインした時のヘッダー %>
+                  <% elsif admin_signed_in? %>
+                    <li>
+                      管理者ページ
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("theme", size: "130x100"), admin_themes_path %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("monkasei", size: "130x100"), admin_users_path %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("signout", size: "130x100"), destroy_admin_session_path, method: :delete %>
+                    </li>
+                <%# どちらの役割でもログインしていない時のヘッダー %>
+                  <% else %>
+                    <li class="ml-3">
+                      <%= link_to image_tag("kokoroe", size: "130x100"), about_path %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("theme", size: "130x100"), user_themes_path %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("keiko", size: "130x100"), new_user_session_path %>
+                    </li>
+                    <li class="ml-3">
+                      <%= link_to image_tag("nyumon", size: "130x100"), new_user_registration_path %>
+                    </li>
+                  <% end %>
+               </ul>
+             </div>
+          </div>
+        </nav>
+      </header>
+
+  </body>
+
+  <body class="main">
+    <div class="cont"><%= yield %></div>
   </body>
 </html>

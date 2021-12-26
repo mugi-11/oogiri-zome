@@ -1,0 +1,23 @@
+<div class="container">
+  <div><%= @user.nickname %>の回答一覧</div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>お題</th>
+          <th>回答</th>
+          <th>Point</th>
+          <th></th>
+        </tr>
+      </thead>
+      <% @user.answers.each do |answer| %>
+      <tbody>
+        <tr>
+          <td><%= answer.theme.theme %></td>
+          <td><%= answer.answer %></td>
+          <td><%= answer.like.count %>Point</td>
+      </tbody>
+      <% end %>
+    </table>
+    <div><%= link_to "編集する", edit_admin_user_path(@user) %></div>
+</div>

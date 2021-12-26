@@ -1,0 +1,28 @@
+<div class="container">
+  <h3><%= current_user.nickname %>の支度部屋</h3>
+    <div>
+
+    </div>
+    <div>回答一覧</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>お題</th>
+          <th>回答</th>
+          <th>Point</th>
+          <th></th>
+        </tr>
+      </thead>
+      <% @user.answers.each do |answer| %>
+      <tbody>
+        <tr>
+          <td><%= answer.theme.theme %></td>
+          <td><%= answer.answer %></td>
+          <td><%= answer.like.count %>Point</td>
+          <td><%= link_to "削除する", user_theme_answer_path(answer.theme_id, answer.id), method: :delete %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+    <div><%= link_to "編集する", edit_user_path(@user) %></div>
+</div>

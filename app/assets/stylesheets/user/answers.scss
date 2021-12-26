@@ -1,0 +1,24 @@
+// Place all the styles related to the user/answers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.sketch {
+  background-image: image-url("sketch3.jpg");
+  background-size: 800px 350px;
+  width: 800px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer {
+  font-size: 36px;
+  width: 400px;
+  heidth: 280px;
+  text-align: center;
+}
+
+.bottom {
+  margin-bottom: 50px;
+}
