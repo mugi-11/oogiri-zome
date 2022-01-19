@@ -29,6 +29,9 @@
 
 テーブル定義書https://docs.google.com/spreadsheets/d/1lYW94U7_LwKNhHqyxBz6D316sVkR0aqgzxDbNdL2wt4/edit?usp=sharing
 ER図https://drive.google.com/file/d/1O8hFT2R3DHeIzHu7w8slKLCtHBJZzLaM/view?usp=sharing
+AWSインフラ設計書https://docs.google.com/spreadsheets/d/1q0PF5mRunPlELHg__gw853hG2-LwSkbMRbTFJ2JYdec/edit?usp=sharing
+AWSフレームhttps://drive.google.com/file/d/1a0j2JW9CxCa7_jCezWBU5FXuU3PMo6aV/view?usp=sharing
+
 
 ## チャレンジ要素一覧
 
